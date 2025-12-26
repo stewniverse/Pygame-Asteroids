@@ -13,6 +13,12 @@ def main():
     print(f"Screen height: {SCREEN_HEIGHT}")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
+    # create a new game clock object
+    clock = pygame.time.Clock()
+
+    # dela time var
+    dt = 0
+
     while (True):
         log_state()
         # check to see if the user has closed the game
@@ -22,6 +28,8 @@ def main():
         
         screen.fill("black")
         pygame.display.flip()
+        dt = clock.tick(60)/1000
+        # print(dt)
 
 if __name__ == "__main__":
     main()
